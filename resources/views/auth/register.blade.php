@@ -10,20 +10,19 @@
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" type="text/css">
 
-    <title>Laravel Validacion de Formularios</title>
+    <title>Registro en Laravel</title>
   </head>
   <body>
     
     <div class="container mt-5">
         <div class="row">
-            <h2 class="text-center mt-4">Registro de usuarios</h2>
+            <h2 class="text-center mt-4">Registrate aquí</h2>
             
             <div class="p-5 bg-white rounded shadow-lg">
                 <form method='post' action="/register">
                     @csrf
                     <div class="form-group mb-2">
-                        <label>Name</label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{old('name')}}">
+                        <input type="text" placeholder="Name" class="form-control @error('name') is-invalid @enderror" name="name" value="{{old('name')}}">
                         @error('name')
                             <span class="invalid-feedback">
                                 <strong>{{$message}}</strong>
@@ -32,8 +31,7 @@
                     </div>
 
                     <div class="form-group mb-2">
-                        <label>Username</label>
-                        <input type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{old('username')}}">
+                        <input type="text" placeholder="Username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{old('username')}}">
                         @error('username')
                             <span class="invalid-feedback">
                                 <strong>{{$message}}</strong>
@@ -42,8 +40,7 @@
                     </div>
 
                     <div class="form-group mb-2">
-                        <label>Email</label>
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email"  value="{{old('email')}}">
+                        <input type="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror" name="email" id="email"  value="{{old('email')}}">
                         @error('email')
                             <span class="invalid-feedback">
                                 <strong>{{$message}}</strong>
@@ -52,8 +49,7 @@
                     </div>
 
                     <div class="form-group mb-2">
-                        <label>Password</label>
-                        <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{old('password')}}">
+                        <input type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" value="{{old('password')}}">
                         @error('password')
                             <span class="invalid-feedback">
                                 <strong>{{$message}}</strong>
@@ -61,13 +57,16 @@
                         @enderror
                     </div>
                     <div class="form-group mb-2">
-                        <label>Confirm Password</label>
-                        <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" value="{{old('password_confirmation')}}">
+                        <input type="password" placeholder="Confirm Password"  class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" value="{{old('password_confirmation')}}">
                         @error('password')
                             <span class="invalid-feedback">
                                 <strong>{{$message}}</strong>
                             </span>
                         @enderror
+                    </div>
+
+                    <div>
+                        <h8>¿Ya tienes cuenta? <a href="/login">Inicia sesion</a></h8>
                     </div>
 
 
