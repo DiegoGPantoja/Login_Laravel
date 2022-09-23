@@ -29,6 +29,7 @@ class LoginRequest extends FormRequest
             'password' => 'required'
         ];
     }
+/** Esta funcion obtiene las credenciales ingresadas, retornando si es un email o un usuario */
 
     public function getCredentials(){
         $username = $this->get('username');
@@ -42,7 +43,11 @@ class LoginRequest extends FormRequest
         return $this->only('username', 'password');
 
     }
-
+    /**
+     * Funcion isEmail, valida si el usuario es el mismo del email
+     * Si lo que se esta ingresando es un usuario entonces regresa que 
+     * este mismo no es un email y toma el usuario para iniciar sesion
+     */
     public function isEmail($value){
         $factory = $this->container->make(ValidationFactory::class);
 
