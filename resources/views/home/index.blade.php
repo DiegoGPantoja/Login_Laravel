@@ -8,5 +8,15 @@
 </head>
 <body>
     <h1>Home</h1>
+    
+    @auth
+        <p>Bienvenido {{auth()->user()->name ?? auth()->user()->username}}, Has iniciado sesion correctamente!</p>
+        <p><a href="/logout">Logout</a></p>
+    @endauth
+
+    @guest
+    <p>Debes <a href="/login">iniciar sesion</a> para ver el contenido.
+    @endguest
+    </p>
 </body>
 </html>

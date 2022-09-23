@@ -21,6 +21,15 @@
             <div class="p-5 bg-white rounded shadow-lg">
                 <form method='post' action="/register">
                     @csrf
+                    <div class="form-group mb-2">
+                        <label>Name</label>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{old('name')}}">
+                        @error('name')
+                            <span class="invalid-feedback">
+                                <strong>{{$message}}</strong>
+                            </span>
+                        @enderror
+                    </div>
 
                     <div class="form-group mb-2">
                         <label>Username</label>
