@@ -22,7 +22,7 @@ class RegisterController extends Controller
 /** Esta funcion es el registro del usuario con 'User' se crea y hace la redirección al login */
     public function register(RegisterRequest $request){
         $user = User::create($request->validated());
-        return redirect('/login')->with('success' , 'Cuenta creada correctamente');
+        return redirect('/login')->with( 'Cuenta creada correctamente');
     }
         
 }

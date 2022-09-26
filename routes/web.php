@@ -17,9 +17,8 @@ use App\Http\Controllers\LogoutController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [RegisterController::class, 'show']);
 
 Route::get('/register', [RegisterController::class, 'show' ]);
 
